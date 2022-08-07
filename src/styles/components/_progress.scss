@@ -1,0 +1,84 @@
+ .progress__container {
+    color: black;
+    font-weight: bold;
+  } 
+  
+  .progress__step {
+    
+    padding: 10px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+    background-color: cream;
+  }
+  
+  .progress__v-stepper {
+    position: relative;
+  /*   visibility: visible; */
+  }
+  
+  
+  /* regular step */
+  .progress__step .progress__circle {
+    background-color: white;
+    border: 3px solid gray;
+    border-radius: 100%;
+    width: 20px;    /* +6 for border */
+    height: 20px;
+    display: inline-block;
+  }
+  
+  .progress__step .progress__line {
+      top: 23px;
+    left: 12px;
+  /*   height: 120px; */
+    height: 100%;
+      
+      position: absolute;
+      border-left: 3px solid $primary;
+  }
+  
+  .progress__step.progress__completed .progress__circle {
+    visibility: visible;
+    background-color: $primary;
+    border-color: $primary
+  }
+  
+  .progress__step.progress__completed .progress__line {
+    border-left: 3px solid $primary;
+  }
+  
+  .progress__step.progress__active .progress__circle {
+  visibility: visible;
+    border-color: $primary;
+  }
+  
+  .progress__step.progress__empty .progress__circle {
+      visibility: hidden;
+  }
+  
+  .progress__step.progress__empty .progress__line {
+  /*     visibility: hidden; */
+  /*   height: 150%; */
+    top: 0;
+    height: 150%;
+  }
+  
+  
+  .progress__step:last-child .progress__line {
+    border-left: 3px solid white;
+    z-index: -1; /* behind the circle to completely hide */
+  }
+  
+  .progress__content {
+    margin-left: 20px;
+    display: inline-block;
+  }
+
+  ul {
+    text-decoration: none;
+    list-style: none;
+  }
+  

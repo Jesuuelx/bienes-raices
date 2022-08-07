@@ -1,43 +1,40 @@
 .step__main {
-/*   align-items: center;
+  /*   align-items: center;
   background-color: $primary;
   display: flex;
   justify-content: center;
   margin: 0px;
   width: 100vw; */
-    display: grid;
+  /*     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-column-gap: 24px;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    height: 100vh;
-
+    grid-column-gap: 24px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1300px;
+  height: 100vh;
 }
 
 .step__box-container1 {
- display: flex;
- flex-direction: column;
- justify-content:flex-start;
- align-items: center;
-    background-color: white;
- /*  box-shadow: 0px 3px $dark-grey; */
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  background-color: white;
   border-radius: 2px;
   padding: 20px;
   width: 50rem;
-  position: fixed;
 }
 
 .step__box-step {
-  background-color:$gris;
+  background-color: $gris;
   width: 20rem;
-/*   box-shadow: 0px 3px $dark-grey; */
   border-radius: 2px;
   padding: 20px;
   background-color: rgb(252, 250, 250);
   top: 0;
   right: 0;
-  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,7 +51,7 @@
 }
 
 .step__input {
-  color:black;
+  color: black;
   border-radius: 8px;
   font-size: 16px;
   margin-bottom: 10px;
@@ -71,40 +68,40 @@
 }
 
 .step__input-direccion {
-    color:black;
-    border-radius: 8px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    height: 40px;
-    width:6rem;
-    font-weight: 900;
-    margin-left: 0.4rem;
-  
-    transition: border-radius 0.3s ease;
-  
-    &:focus {
-      border-radius: 1px solid $primary;
-      outline: none;
-    }
-  }
+  color: black;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  height: 40px;
+  width: 6rem;
+  font-weight: 900;
+  margin-left: 0.4rem;
 
-  .step__input-adicional {
-    color:black;
-    border-radius: 8px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    height: 30px;
-    width:1rem;
-    font-weight: 900;
-    margin-left: 0.2rem;
-  
-    transition: border-radius 0.3s ease;
-  
-    &:focus {
-      border-radius: 1px solid $primary;
-      outline: none;
-    }
+  transition: border-radius 0.3s ease;
+
+  &:focus {
+    border-radius: 1px solid $primary;
+    outline: none;
   }
+}
+
+.step__input-adicional {
+  color: black;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  height: 30px;
+  width: 1rem;
+  font-weight: 900;
+  margin-left: 0.2rem;
+
+  transition: border-radius 0.3s ease;
+
+  &:focus {
+    border-radius: 1px solid $primary;
+    outline: none;
+  }
+}
 
 .step__social-networks {
   align-items: center;
@@ -117,9 +114,9 @@
 }
 
 .step__alert-error {
-  background-color:$gris;
+  background-color: $gris;
   border-radius: 5px;
-  color:red;
+  color: red;
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
@@ -130,46 +127,46 @@
 }
 
 .step__alert-error-direccion {
-    background-color:$gris;
-    border-radius: 5px;
-    color:red;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-    padding: 5px;
-    font-size: 8px;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+  background-color: $gris;
+  border-radius: 5px;
+  color: red;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 8px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
- .step__form {
+.step__form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 50rem;
-} 
+}
 
 .step__form-direccion {
-    display: flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 40rem;
-  } 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+}
 .step__intro-title {
-    font-size: 48px;
-    line-height: 48px;
-    letter-spacing: -2px;
-    margin-bottom: 20px;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
 }
 
 .step__subtitle {
-    color:$primary;
+  color: $primary;
 }
 
 .step__bold {
-    font-weight:900;
+  font-weight: 900;
 }

@@ -31,7 +31,7 @@ export const FloorStep = () => {
     e.preventDefault();
     setSubmmited(true);
     if (!isFormValid) return;
-    dispatch(stepFloor({ floor: floor + 'piso' }));
+    dispatch(stepFloor({ floor:'Piso ' + floor }));
       navigate('/caracteristicas-adicional', {replace:true});
     onResetForm();
   };
