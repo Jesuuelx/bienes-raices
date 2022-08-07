@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 export const stepsSlice = createSlice({
   name: "steps",
   initialState: {
-    status: "checking",
     displayName: null,
     email: null,
     address: null,
@@ -15,18 +14,17 @@ export const stepsSlice = createSlice({
         id: 1,
       },
       {
-        name: "parque",
+        name: "parque de juegos",
         done: false,
         id: 2,
       },
       {
-        name: "salondefiesta",
+        name: "salon comunal",
         done: false,
         id: 3,
       },
     ],
     isLoading: false,
-    errorMessage: false,
   },
   reducers: {
     stepDisplayName: (state, { payload }) => {

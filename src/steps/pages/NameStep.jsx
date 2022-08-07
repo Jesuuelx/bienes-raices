@@ -49,7 +49,8 @@ export const NameStep = () => {
       <h3 className="mb-5 step__subtitle">Paso 1 de 5: Datos de registro</h3>
       <h4 className="mb-5"> ¿Quién recibirá la oferta? </h4>
 
-      <form onSubmit={onSubmit} className="step__form">
+      <form onSubmit={onSubmit} className="step__form"
+      aria-label="step-one-btn">
         <p className="step__bold">Nombre y Apellido</p>
         <input
           type="text"

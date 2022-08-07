@@ -1,43 +1,17 @@
-import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { stepAditionalInformation } from "../../store/steps/stepsSlice";
 
 export const AdditionalStep = () => {
-  const [input, setInput] = useState([
-    {
-      name: "zonabbq",
-      done: false,
-      id: 1,
-    },
-    {
-      name: "salondefiesta",
-      done: false,
-      id: 2,
-    },
-    {
-      name: "parque",
-      done: false,
-      id: 3,
-    },
-  ]);
-
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+  
   const onSubmit = (e) => {
     e.preventDefault();
-
-    console.log(input);
+    
+    navigate('/resumen', {replace:true});
   };
-
-  /*   const onInputChange = (id) => {
-  
-   
-   dispatch( stepAditionalInformation( id ) );
-
-
-
-   
-  }; */
 
   return (
     <>
@@ -45,9 +19,7 @@ export const AdditionalStep = () => {
         Paso 5 de 5: <br />{" "}
         <span className="step__intro-title"> Opcional *</span>
       </h1>
-      <h2 className="mb-10 step__solicita">
-        Elige si es tu caso
-      </h2>
+      <h2 className="mb-10 step__solicita">Elige si es tu caso</h2>
       <hr />
 
       <form onSubmit={onSubmit} className="step__form-direccion">
@@ -57,7 +29,7 @@ export const AdditionalStep = () => {
             type="checkbox"
             value="Zona BBQ"
             name="input"
-            className="step__input-direccion"
+            className="step__input-adicional"
             autoComplete="off"
             onChange={() => dispatch(stepAditionalInformation(1))}
           />
@@ -69,7 +41,7 @@ export const AdditionalStep = () => {
             type="checkbox"
             value="Salon Comunal"
             name="input"
-            className="step__input-direccion"
+            className="step__input-adicional"
             autoComplete="off"
             onChange={() => dispatch(stepAditionalInformation(2))}
           />
@@ -80,7 +52,7 @@ export const AdditionalStep = () => {
             type="checkbox"
             value="Parque de juegos"
             name="input"
-            className="step__input-direccion"
+            className="step__input-adicional"
             autoComplete="off"
             onChange={() => dispatch(stepAditionalInformation(3))}
           />

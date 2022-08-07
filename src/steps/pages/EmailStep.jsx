@@ -4,44 +4,53 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { stepEmail } from "../../store/steps/stepsSlice";
 
-const formValidations = { 
-  email: [ (value) => value.includes('@') && !value.includes('@@'), 'Introduce un correo electronico valido'],
-}
+const formValidations = {
+  email: [
+    (value) =>
+      value.includes("@") &&
+      !value.includes("@@") &&
+      !value.includes("(") &&
+      !value.includes(")") &&
+      !value.includes(",") &&
+      !value.includes("<") &&
+      !value.includes(">") &&
+      !value.includes(":") &&
+      !value.includes("[") &&
+      !value.includes("]") &&
+      !value.includes(" ") &&
+      !value.includes("%") &&
+      !value.includes("&") &&
+      !value.includes(";"),
+    "Introduce un correo electronico valido",
+  ],
+};
 
 const formData = {
-  email:'',
-}
+  email: "",
+};
 
 export const EmailStep = () => {
-  
   const [submmited, setSubmmited] = useState(false);
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  
-  const {
-    email,
-    onInputChange,
-    onResetForm,
-    isFormValid,
-    emailValid,
-  } = useForm(formData, formValidations);
+
+  const { email, onInputChange, onResetForm, isFormValid, emailValid } =
+    useForm(formData, formValidations);
 
   const onSubmit = (e) => {
     e.preventDefault();
     setSubmmited(true);
     if (!isFormValid) return;
     dispatch(stepEmail({ email: email }));
-    navigate('/direccion', {replace:true})
+    navigate("/direccion", { replace: true });
     onResetForm();
   };
-  
-  
+
   return (
     <>
-      <h1 className="step__title">
-        Paso 2 de 5: <br />{" "}
+      <h1 className="step__title">Paso 2 de 5:<br />{" "}
         <span className="step__intro-title"> Correo Electronicó *</span>
       </h1>
       <h2 className="mb-10 step__solicita">
@@ -50,8 +59,8 @@ export const EmailStep = () => {
       <hr />
       <h4 className="mb-5"> Correo: </h4>
 
-      <form onSubmit={onSubmit} className="step__form">
-   
+      <form onSubmit={onSubmit} className="step__form"
+      aria-label="step-two-form">
         <input
           type="text"
           placeholder="Ingresa tu nombre"
@@ -63,7 +72,9 @@ export const EmailStep = () => {
         />
         {submmited && <p className="step__alert-error"> {emailValid} </p>}
         <br />
-        <button type="submit" className="btn btn-primary step__bold">Siguiente</button>
+        <button type="submit" className="btn btn-primary step__bold">
+          Siguiente
+        </button>
       </form>
     </>
   );

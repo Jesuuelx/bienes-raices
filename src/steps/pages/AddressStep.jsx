@@ -61,11 +61,12 @@ export const AddressStep = () => {
         <span className="step__intro-title"> Direccion *</span>
       </h1>
       <h2 className="mb-10 step__solicita">
-        ¿A que correo quieres que nos comuniquemos contigo?
+        Danos tu direccion
       </h2>
       <hr />
 
-      <form onSubmit={onSubmit} className="step__form-direccion">
+      <form onSubmit={onSubmit} className="step__form-direccion"
+      aria-label="step-direccion">
         <div>
           <h4 className="mb-5"> Ciudad: </h4>
           <input
@@ -76,6 +77,7 @@ export const AddressStep = () => {
             name="ciudad"
             className="step__input-direccion"
             autoComplete="off"
+            data-testid={'input-ciudad'}
           />
              {submmited && <p className="step__alert-error-direccion"> {ciudadValid} </p>}
         </div>
@@ -89,6 +91,7 @@ export const AddressStep = () => {
             name="via"
             className="step__input-direccion"
             autoComplete="off"
+            data-testid={'input-via'}
           />
              {submmited && <p className="step__alert-error-direccion"> {viaValid} </p>}
         </div>
@@ -102,6 +105,7 @@ export const AddressStep = () => {
             name="nro1"
             className="step__input-direccion"
             autoComplete="off"
+            data-testid={'input-nro1'}
           />
              {submmited && <p className="step__alert-error-direccion"> {nro1Valid} </p>}
         </div>
@@ -114,6 +118,7 @@ export const AddressStep = () => {
             name="nro2"
             className="step__input-direccion"
             autoComplete="off"
+            data-testid={'input-nro2'}
           />
              {submmited && <p className="step__alert-error-direccion"> {nro2Valid} </p>}
         </div>
@@ -127,6 +132,7 @@ export const AddressStep = () => {
             name="nro3"
             className="step__input-direccion"
             autoComplete="off"
+            data-testid={'input-nro3'}
           />
              {submmited && <p className="step__alert-error-direccion"> {nro3Valid} </p>}
         </div>

@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in <AddressStep /> should match with the snapchot 1`] = `
+<div>
+  <h1
+    class="step__title"
+  >
+    Paso 3 de 5: 
+    <br />
+     
+    <span
+      class="step__intro-title"
+    >
+       Direccion *
+    </span>
+  </h1>
+  <h2
+    class="mb-10 step__solicita"
+  >
+    Danos tu direccion
+  </h2>
+  <hr />
+  <form
+    aria-label="step-direccion"
+    class="step__form-direccion"
+  >
+    <div>
+      <h4
+        class="mb-5"
+      >
+         Ciudad: 
+      </h4>
+      <input
+        autocomplete="off"
+        class="step__input-direccion"
+        data-testid="input-ciudad"
+        name="ciudad"
+        placeholder="Ciudad"
+        type="text"
+        value=""
+      />
+    </div>
+    <div>
+      <h4
+        class="mb-5"
+      >
+         Via: 
+      </h4>
+      <input
+        autocomplete="off"
+        class="step__input-direccion"
+        data-testid="input-via"
+        name="via"
+        placeholder="Calle/Carrera"
+        type="text"
+        value=""
+      />
+    </div>
+    <div>
+      <h4
+        class="mb-5"
+      >
+         Numero 
+      </h4>
+      <input
+        autocomplete="off"
+        class="step__input-direccion"
+        data-testid="input-nro1"
+        name="nro1"
+        type="number"
+        value=""
+      />
+    </div>
+    <div>
+      <h4
+        class="mb-5"
+      >
+         # 
+      </h4>
+      <input
+        autocomplete="off"
+        class="step__input-direccion"
+        data-testid="input-nro2"
+        name="nro2"
+        type="number"
+        value=""
+      />
+    </div>
+    <div>
+      <h4
+        class="mb-5"
+      >
+         - 
+      </h4>
+      <input
+        autocomplete="off"
+        class="step__input-direccion"
+        data-testid="input-nro3"
+        name="nro3"
+        type="number"
+        value=""
+      />
+    </div>
+    <br />
+    <button
+      class="btn btn-primary step__bold"
+      type="submit"
+    >
+      Siguiente
+    </button>
+  </form>
+</div>
+`;

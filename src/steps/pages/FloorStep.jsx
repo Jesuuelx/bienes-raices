@@ -40,13 +40,10 @@ export const FloorStep = () => {
     <>
       <h1 className="step__title">
         Paso 4 de 5: <br />{" "}
-        <span className="step__intro-title"> Correo Electronicó *</span>
+        <span className="step__intro-title"> Piso de tu apartamento*</span>
       </h1>
-      <h2 className="mb-10 step__solicita">
-        ¿A que correo quieres que nos comuniquemos contigo?
-      </h2>
       <hr />
-      <h4 className="mb-5"> Correo: </h4>
+      <h4 className="mb-5"> Piso: </h4>
 
       <form onSubmit={onSubmit} className="step__form">
         <input

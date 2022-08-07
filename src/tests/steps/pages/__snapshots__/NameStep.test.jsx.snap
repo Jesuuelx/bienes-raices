@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing in <NameStep /> should show the  component 1`] = `
+<div>
+  <h1
+    class="step__title"
+  >
+    Compramos 
+    <br />
+     
+    <span
+      class="step__intro-title"
+    >
+       tu vivienda en 10 dias *
+    </span>
+  </h1>
+  <h2
+    class="mb-10 step__solicita"
+  >
+    ¡Solicita una oferta gratis!
+  </h2>
+  <hr />
+  <h3
+    class="mb-5 step__subtitle"
+  >
+    Paso 1 de 5: Datos de registro
+  </h3>
+  <h4
+    class="mb-5"
+  >
+     ¿Quién recibirá la oferta? 
+  </h4>
+  <form
+    aria-label="step-one-btn"
+    class="step__form"
+  >
+    <p
+      class="step__bold"
+    >
+      Nombre y Apellido
+    </p>
+    <input
+      autocomplete="off"
+      class="step__input"
+      name="displayName"
+      placeholder="Ingresa tu nombre"
+      type="text"
+      value=""
+    />
+    <br />
+    <button
+      class="btn btn-primary step__bold"
+      type="submit"
+    >
+      Siguiente
+    </button>
+  </form>
+</div>
+`;

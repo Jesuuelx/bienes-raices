@@ -88,6 +88,24 @@
     }
   }
 
+  .step__input-adicional {
+    color:black;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    height: 30px;
+    width:1rem;
+    font-weight: 900;
+    margin-left: 0.2rem;
+  
+    transition: border-radius 0.3s ease;
+  
+    &:focus {
+      border-radius: 1px solid $primary;
+      outline: none;
+    }
+  }
+
 .step__social-networks {
   align-items: center;
   display: flex;
