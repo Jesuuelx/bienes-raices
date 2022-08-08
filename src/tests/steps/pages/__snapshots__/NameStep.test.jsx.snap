@@ -11,7 +11,7 @@ exports[`Testing in <NameStep /> should show the  component 1`] = `
     <span
       class="step__intro-title"
     >
-       tu vivienda en 10 dias *
+       tu apartamento en 10 dias *
     </span>
   </h1>
   <h2
@@ -28,7 +28,7 @@ exports[`Testing in <NameStep /> should show the  component 1`] = `
   <h4
     class="mb-5"
   >
-     ¿Quién recibirá la oferta? 
+    ¿Quién recibirá la oferta?
   </h4>
   <form
     aria-label="step-one-btn"
@@ -43,7 +43,6 @@ exports[`Testing in <NameStep /> should show the  component 1`] = `
       autocomplete="off"
       class="step__input"
       name="displayName"
-      placeholder="Ingresa tu nombre"
       type="text"
       value=""
     />

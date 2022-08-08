@@ -12,7 +12,7 @@ const formData = {
   floor: "",
 };
 
-export const FloorStep = () => {
+export const FloorStep = ({stepFour}) => {
   const [submmited, setSubmmited] = useState(false);
 
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ export const FloorStep = () => {
     setSubmmited(true);
     if (!isFormValid) return;
     dispatch(stepFloor({ floor:'Piso ' + floor }));
-      navigate('/caracteristicas-adicional', {replace:true});
+      navigate(stepFour.pathTo, {replace:true});
     onResetForm();
   };
 
@@ -40,20 +40,20 @@ export const FloorStep = () => {
     <>
       <h1 className="step__title">
         Paso 4 de 5: <br />{" "}
-        <span className="step__intro-title"> Piso de tu apartamento*</span>
+        <span className="step__intro-title"> {stepFour.description}*</span>
       </h1>
       <hr />
-      <h4 className="mb-5"> Piso: </h4>
+      <h4 className="mb-5">{stepFour.name}</h4>
 
-      <form onSubmit={onSubmit} className="step__form">
+      <form onSubmit={onSubmit} className="step__form" aria-label="form-floor">
         <input
           type="number"
-          placeholder="Ingresa tu nombre"
           onChange={onInputChange}
           value={floor}
           name="floor"
           className="step__input"
           autoComplete="off"
+          data-testid={'input-floor'}
         />
 
         {submmited && <p className="step__alert-error"> {floorValid} </p>}

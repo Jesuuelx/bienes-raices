@@ -11,6 +11,7 @@ import {
   AdditionalStep,
   Resumen,
 } from "../steps/pages";
+import steps from "../steps.json";
 
 export const AppRouter = () => {
   const { displayName, email, address, floor } = useSelector(
@@ -23,21 +24,24 @@ export const AppRouter = () => {
     <div className="step__main">
       <div className="step__box-container1">
         <Routes>
-          <Route path="/nombre-usuario" element={<NameStep />} />
+          <Route
+            path="/nombre-usuario"
+            element={<NameStep stepOne={steps[0]} />}
+          />
 
           {displayName !== null ? (
-            <Route path="/correo-usuario" element={<EmailStep />} />
+            <Route path="/correo-usuario" element={<EmailStep stepTwo={steps[1]} />} />
           ) : (
             <Route path="/nombre-usuario" element={<NameStep />} />
           )}
 
           {email !== null ? (
-            <Route path="/direccion" element={<AddressStep />} />
+            <Route path="/direccion" element={<AddressStep stepThree={ steps[2] } />} />
           ) : (
             <Route path="/nombre-usuario" element={<NameStep />} />
           )}
           {address !== null ? (
-            <Route path="/datos-piso" element={<FloorStep />} />
+            <Route path="/datos-piso" element={<FloorStep stepFour={ steps[3] } />} />
           ) : (
             <Route path="/nombre-usuario" element={<NameStep />} />
           )}
@@ -45,13 +49,13 @@ export const AppRouter = () => {
           {floor !== null ? (
             <Route
               path="/caracteristicas-adicional"
-              element={<AdditionalStep />}
+              element={<AdditionalStep stepFive={steps[4]} />}
             />
           ) : (
             <Route path="/nombre-usuario" element={<NameStep />} />
           )}
           {floor !== null ? (
-            <Route path="/resumen" element={<Resumen />} />
+            <Route path="/resumen" element={<Resumen stepSix={steps[5]} />} />
           ) : (
             <Route path="/nombre-usuario" element={<NameStep />} />
           )}

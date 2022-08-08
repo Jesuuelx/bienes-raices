@@ -4,6 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 import { stepsSlice } from "../../../store/steps/stepsSlice";
 import { EmailStep } from "../../../steps/pages";
+import steps from '../../../steps.json';
 
 const store = configureStore({
   reducer: {
@@ -29,7 +30,7 @@ describe("Test in <EmailStep />", () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <EmailStep />
+          <EmailStep stepTwo={steps[1]} />
         </MemoryRouter>
       </Provider>
     );
@@ -41,7 +42,7 @@ describe("Test in <EmailStep />", () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <EmailStep />
+          <EmailStep stepTwo={steps[1]} />
         </MemoryRouter>
       </Provider>
     );
@@ -54,7 +55,7 @@ describe("Test in <EmailStep />", () => {
 
    render( <Provider store={store}>
     <MemoryRouter initialEntries={['/correo-usuario']}>
-      <EmailStep />
+      <EmailStep stepTwo={steps[1]} />
     </MemoryRouter>
   </Provider>
    )

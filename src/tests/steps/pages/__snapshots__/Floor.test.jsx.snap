@@ -1,39 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test in <EmailStep /> should make to match with Snapchot 1`] = `
+exports[`Test in <Floor /> should make to match with the snapchot 1`] = `
 <div>
   <h1
     class="step__title"
   >
-    Paso 2 de 5:
+    Paso 4 de 5: 
     <br />
      
     <span
       class="step__intro-title"
     >
-       Correo Electronico *
+       
+      Piso de tu apartamento*
+      *
     </span>
   </h1>
-  <h2
-    class="mb-10 step__solicita"
-  >
-    ¿A que correo quieres que nos comuniquemos contigo?
-  </h2>
   <hr />
   <h4
     class="mb-5"
   >
-     Correo: 
+    Piso
   </h4>
   <form
-    aria-label="step-two-form"
+    aria-label="form-floor"
     class="step__form"
   >
     <input
       autocomplete="off"
       class="step__input"
-      name="email"
-      type="text"
+      data-testid="input-floor"
+      name="floor"
+      type="number"
       value=""
     />
     <br />

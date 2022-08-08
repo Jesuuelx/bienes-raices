@@ -29,7 +29,7 @@ const formData = {
   email: "",
 };
 
-export const EmailStep = () => {
+export const EmailStep = ({stepTwo}) => {
   const [submmited, setSubmmited] = useState(false);
 
   const dispatch = useDispatch();
@@ -44,17 +44,17 @@ export const EmailStep = () => {
     setSubmmited(true);
     if (!isFormValid) return;
     dispatch(stepEmail({ email: email }));
-    navigate("/direccion", { replace: true });
+    navigate(stepTwo.pathTo, { replace: true });
     onResetForm();
   };
 
   return (
     <>
       <h1 className="step__title">Paso 2 de 5:<br />{" "}
-        <span className="step__intro-title"> Correo Electronicó *</span>
+        <span className="step__intro-title"> Correo Electronico *</span>
       </h1>
       <h2 className="mb-10 step__solicita">
-        ¿A que correo quieres que nos comuniquemos contigo?
+      {stepTwo.description}
       </h2>
       <hr />
       <h4 className="mb-5"> Correo: </h4>
@@ -63,7 +63,6 @@ export const EmailStep = () => {
       aria-label="step-two-form">
         <input
           type="text"
-          placeholder="Ingresa tu nombre"
           onChange={onInputChange}
           value={email}
           name="email"

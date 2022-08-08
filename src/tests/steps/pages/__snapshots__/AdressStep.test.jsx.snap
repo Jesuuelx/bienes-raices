@@ -11,7 +11,9 @@ exports[`Test in <AddressStep /> should match with the snapchot 1`] = `
     <span
       class="step__intro-title"
     >
-       Direccion *
+       
+      Direccion
+       *
     </span>
   </h1>
   <h2

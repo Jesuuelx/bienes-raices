@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in Modal show Snapchot 1`] = `
+<div>
+  <div
+    class="modal false"
+  >
+    <div
+      class="modal-container"
+    >
+      <button
+        class="modal-close"
+      >
+         
+        X
+         
+      </button>
+      <div
+        class="progress__container"
+      >
+        <h1>
+          Proceso Formulario:
+        </h1>
+        <hr />
+        <br />
+        <div
+          class="progress__step false false"
+        >
+          <div
+            class="progress__v-stepper"
+          >
+            <div
+              class="progress__circle"
+            />
+            <div
+              class="progress__line"
+            />
+          </div>
+          <div
+            class="progress__content"
+          >
+            Nombre:
+          </div>
+        </div>
+        <div
+          class="progress__step progress__empty"
+        >
+          <div
+            class="progress__v-stepper"
+          >
+            <div
+              class="progress__circle"
+            />
+            <div
+              class="progress__line"
+            />
+          </div>
+          <div
+            class="progress__content"
+          />
+        </div>
+        <div
+          class="progress__step false false"
+        >
+          <div
+            class="progress__v-stepper"
+          >
+            <div
+              class="progress__circle"
+            />
+            <div
+              class="progress__line"
+            />
+          </div>
+          <div
+            class="progress__content"
+          >
+            Email:
+          </div>
+        </div>
+        <div
+          class="progress__step progress__empty"
+        >
+          <div
+            class="progress__v-stepper"
+          >
+            <div
+              class="progress__circle"
+            />
+            <div
+              class="progress__line"
+            />
+          </div>
+          <div
+            class="progress__content"
+          />
+        </div>
+        <div
+          class="progress__step false false"
+        >
+          <div
+            class="progress__v-stepper"
+          >
+            <div
+              class="progress__circle"
+            />
+            <div
+              class="progress__line"
+            />
+          </div>
+          <div
+            class="progress__content"
+          >
+            Direccion:
+          </div>
+        </div>
+        <div
+          class="progress__step progress__empty"
+        >
+          <div
+            class="progress__v-stepper"
+          >
+            <div
+              class="progress__circle"
+            />
+            <div
+              class="progress__line"
+            />
+          </div>
+          <div
+            class="progress__content"
+          />
+        </div>
+        <div
+          class="progress__step false false"
+        >
+          <div
+            class="progress__v-stepper"
+          >
+            <div
+              class="progress__circle"
+            />
+            <div
+              class="progress__line"
+            />
+          </div>
+          <div
+            class="progress__content"
+          >
+            Piso
+          </div>
+        </div>
+        <div
+          class="progress__step progress__empty"
+        >
+          <div
+            class="progress__v-stepper"
+          >
+            <div
+              class="progress__circle"
+            />
+            <div
+              class="progress__line"
+            />
+          </div>
+          <div
+            class="progress__content"
+          />
+        </div>
+        <div
+          class="progress__step false false"
+        >
+          <div
+            class="progress__v-stepper"
+          >
+            <div
+              class="progress__circle"
+            />
+            <div
+              class="progress__line"
+            />
+          </div>
+          <div
+            class="progress__content"
+          >
+            Caracteristicas
+            <ul>
+              <li />
+              <li />
+              <li />
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

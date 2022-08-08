@@ -4,6 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 import { stepsSlice } from "../../../store/steps/stepsSlice";
 import { AddressStep } from "../../../steps/pages";
+import steps from "../../../steps.json";
 
 const mockedUseNavigate = jest.fn();
 
@@ -11,126 +12,93 @@ jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useNavigate: () => mockedUseNavigate,
 }));
-    
 
-
-describe('Test in <AddressStep />', () => { 
-
-    beforeEach(() => jest.clearAllMocks());
-        const store = configureStore({
-            reducer: {
-              steps: stepsSlice.reducer,
-            },
-            /*    preloadedState: {
+describe("Test in <AddressStep />", () => {
+  beforeEach(() => jest.clearAllMocks());
+  const store = configureStore({
+    reducer: {
+      steps: stepsSlice.reducer,
+    },
+    /*    preloadedState: {
                   steps:
               } */
-          });
+  });
 
+  test("should match with the snapchot", () => {
+    const { container } = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <AddressStep stepThree={steps[2]} />
+        </MemoryRouter>
+      </Provider>
+    );
 
-        test('should match with the snapchot', () => { 
+    expect(container).toMatchSnapshot();
+  });
 
-            const { container } = render(
-                <Provider store={store}>
-                    <MemoryRouter>
+  test("should show a copy h2:Danos tu direccion", () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <AddressStep stepThree={steps[2]} />
+        </MemoryRouter>
+      </Provider>
+    );
 
-                <AddressStep />
+    expect(screen.getByRole("heading", { level: 2 }).innerHTML).toContain(
+      "Danos tu direccion"
+    );
+  });
 
-                    </MemoryRouter>
-                </Provider>
-            );
+  test("should have a h1 ", () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <AddressStep stepThree={steps[2]} />
+        </MemoryRouter>
+      </Provider>
+    );
 
-            expect( container ).toMatchSnapshot();
+    expect(screen.getByRole("heading", { level: 1 })).toBeTruthy();
+  });
 
-         });
+  test("should press a button submit and navigate to /datos-piso", () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={["/direccion"]}>
+          <AddressStep stepThree={steps[2]} />
+        </MemoryRouter>
+      </Provider>
+    );
 
-         test('should show a copy h2:Danos tu direccion', () => { 
+    const inputCity = screen.getByTestId("input-ciudad");
+    fireEvent.change(inputCity, {
+      target: { name: "ciudad", value: "Bogota" },
+    });
 
-            render(
-                <Provider store={store}>
-                    <MemoryRouter>
+    const inputVia = screen.getByTestId("input-via");
+    fireEvent.change(inputVia, {
+      target: { name: "via", value: "Calle" },
+    });
 
-                <AddressStep />
+    const inputNro1 = screen.getByTestId("input-nro1");
+    fireEvent.change(inputNro1, {
+      target: { name: "nro1", value: "174" },
+    });
 
-                    </MemoryRouter>
-                </Provider>
-            );
+    const inputNro2 = screen.getByTestId("input-nro2");
+    fireEvent.change(inputNro2, {
+      target: { name: "nro2", value: "8" },
+    });
 
-            expect( screen.getByRole('heading', {level:2}).innerHTML).toContain('Danos tu direccion');
+    const inputNro3 = screen.getByTestId("input-nro3");
+    fireEvent.change(inputNro3, {
+      target: { name: "nro3", value: "30" },
+    });
 
-            
+    const stepBtn = screen.getByLabelText("step-direccion");
+    fireEvent.submit(stepBtn);
 
-
-
-          });
-
-          test('should have a h1 ', () => { 
-
-            render(
-                <Provider store={store}>
-                    <MemoryRouter>
-
-                <AddressStep />
-
-                    </MemoryRouter>
-                </Provider>
-            );
-
-            expect( screen.getByRole('heading', {level:1}) ).toBeTruthy();
-
-
-           })
-
-           test('should press a button submit and navigate to /datos-piso', () => { 
-
-           render(
-            <Provider store={store}>
-            <MemoryRouter>
-
-        <AddressStep />
-
-            </MemoryRouter>
-        </Provider>
-           );
-           
-           
-           
-            const inputCity = screen.getByTestId("input-ciudad");
-            fireEvent.change(inputCity, {
-              target: { name: "ciudad", value: "Bogota" },
-            });
-
-            
-            const inputVia = screen.getByTestId("input-via");
-            fireEvent.change(inputVia, {
-              target: { name: "via", value: "Calle" },
-            });
-
-            
-            const inputNro1 = screen.getByTestId("input-nro1");
-            fireEvent.change(inputNro1, {
-              target: { name: "nro1", value: "174" },
-            });
-
-            
-            const inputNro2 = screen.getByTestId("input-nro2");
-            fireEvent.change(inputNro2, {
-              target: { name: "nro2", value: "8" },
-            });
-
-            
-            const inputNro3 = screen.getByTestId("input-nro3");
-            fireEvent.change(inputNro3, {
-              target: { name: "nro3", value: "30" },
-            });
-            
-            const stepBtn = screen.getByLabelText("step-direccion");
-            fireEvent.submit(stepBtn);
-            
-            expect( mockedUseNavigate ).toBeCalledWith('/datos-piso', {"replace": true});
-
-
-
-            })
-
-
-     })
+    expect(mockedUseNavigate).toBeCalledWith("/datos-piso", { replace: true });
+  });
+});

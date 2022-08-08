@@ -7,7 +7,6 @@ export const Progress = () => {
 
   const { pathname } = useLocation();
 
-  console.log(pathname);
 
   return (
     <div className="progress__container">

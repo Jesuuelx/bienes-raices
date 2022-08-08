@@ -4,6 +4,7 @@ import { NameStep } from "../../../steps/pages/NameStep";
 import { Provider } from "react-redux";
 import { stepsSlice } from "../../../store/steps/stepsSlice";
 import { MemoryRouter } from "react-router-dom";
+import steps from '../../../steps.json'
 
 const store = configureStore({
   reducer: {
@@ -28,7 +29,7 @@ describe("Testing in <NameStep />", () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <NameStep />
+          <NameStep stepOne={steps[0]} />
         </MemoryRouter>
       </Provider>
     );
@@ -38,11 +39,11 @@ describe("Testing in <NameStep />", () => {
     expect( screen.getByRole('heading', {level:3}).innerHTML ).toBe('Paso 1 de 5: Datos de registro');
   });
 
-  test("Debe hacer el submit", () => {
+  test("should make a submit and navigate to /correo-usuario", () => {
     render(
       <Provider store={store}>
         <MemoryRouter initialEntries={['/datos-usuario']}>
-          <NameStep />
+          <NameStep stepOne={steps[0]} />
         </MemoryRouter>
       </Provider>
     );
@@ -55,7 +56,7 @@ describe("Testing in <NameStep />", () => {
     const stepBtn = screen.getByLabelText("step-one-btn");
     fireEvent.submit(stepBtn);
 
-    expect( mockedUseNavigate ).toBeCalledWith('/correo-usuario', {"replace": true});
+    expect( mockedUseNavigate ).toBeCalledWith(steps[0].pathTo, {"replace": true});
 
     
   });

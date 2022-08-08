@@ -20,7 +20,7 @@ const formData = {
   nro3: "",
 };
 
-export const AddressStep = () => {
+export const AddressStep = ({stepThree}) => {
   const [submmited, setSubmmited] = useState(false);
 
   const dispatch = useDispatch();
@@ -48,7 +48,7 @@ export const AddressStep = () => {
     setSubmmited(true);
     if (!isFormValid) return;
     dispatch(stepAddress({ address:`${ciudad} ${via} ${nro1} ${nro2} ${nro3}` }));
-    navigate("/datos-piso", {
+    navigate(stepThree.pathTo, {
       replace: true,
     });
     onResetForm();
@@ -58,10 +58,10 @@ export const AddressStep = () => {
     <>
       <h1 className="step__title">
         Paso 3 de 5: <br />{" "}
-        <span className="step__intro-title"> Direccion *</span>
+        <span className="step__intro-title"> {stepThree.name} *</span>
       </h1>
       <h2 className="mb-10 step__solicita">
-        Danos tu direccion
+        {stepThree.description}
       </h2>
       <hr />
 

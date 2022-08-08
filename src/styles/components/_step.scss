@@ -1,19 +1,9 @@
 .step__main {
-  /*   align-items: center;
-  background-color: $primary;
-  display: flex;
-  justify-content: center;
-  margin: 0px;
-  width: 100vw; */
-  /*     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-column-gap: 24px; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1400px;
- /*  height: 100vh; */
   width: 100%;
 }
 
@@ -143,7 +133,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 40rem;
+  width: 38rem;
 }
 .step__intro-title {
   font-size: 48px;
@@ -193,50 +183,20 @@
 
   .step__form-direccion {
     flex-direction: column;
-    width: 25rem;
+    width: 23rem;
   }
 
   .step__input-direccion {
-    width:15rem ;
+    width:13rem ;
 
 
-  }
-
-  .modal {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.75);
-    display: none;
-    justify-content: center;
-    flex-direction: colum;
-    align-items: center;
-  }
-  
-  .modal-container {
-    position: relative;
-    padding: 1rem;
-    overflow-y: auto;
-    background-color: #fff;
-  }
-  
-  .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
-  
-  .modal.is-open {
-    display: flex;
-    justify-content: center;
-    flex-direction: colum;
-    align-items: center;
   }
 
 }
+
+
+  
+
 
 @media screen and (max-width: 992px) { 
   .step__form-direccion {

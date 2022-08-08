@@ -1,0 +1,43 @@
+[
+  {
+    "nameComponent": "NameStep",
+    "name": "Nombre y Apellido",
+    "pathTo": "/correo-usuario",
+    "id:": 0,
+    "description": "¿Quién recibirá la oferta?"
+  },
+  {
+    "nameComponent": "EmailStep",
+    "name": "Correo",
+    "pathTo": "/direccion",
+    "id:": 1,
+    "description": "¿A que correo quieres que nos comuniquemos contigo?"
+  },
+  {
+    "nameComponent": "AddressStep",
+    "name": "Direccion",
+    "pathTo": "/datos-piso",
+    "id:": 2,
+    "description": "Danos tu direccion"
+  },
+  {
+    "nameComponent": "FloorStep",
+    "name": "Piso",
+    "pathTo": "/caracteristicas-adicional",
+    "id:": 3,
+    "description": "Piso de tu apartamento*"
+  },
+  {
+    "nameComponent": "AdditionalStep",
+    "name": "Informacion Adicional",
+    "pathTo": "/resumen",
+    "id:": 4,
+    "description": "Elige si es tu caso"
+  },
+  {
+    "nameComponent": "Resumen",
+    "name": "Resumen",
+    "id:": 5,
+    "description": "¡Has completado tu registro con exito!"
+  }
+]

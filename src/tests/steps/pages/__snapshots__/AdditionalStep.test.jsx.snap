@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in <AdditionalStep /> should match with the snapchot 1`] = `
+<div>
+  <h1
+    class="step__title"
+  >
+    Paso 5 de 5: 
+    <br />
+     
+    <span
+      class="step__intro-title"
+    >
+       
+      Informacion Adicional
+       Opcional *
+    </span>
+  </h1>
+  <h2
+    class="mb-10 step__solicita"
+  >
+    Elige si es tu caso
+  </h2>
+  <hr />
+  <form
+    aria-label="adicional-step"
+    class="step__form-direccion"
+  >
+    <div
+      class="step__label"
+    >
+      <label
+        class="mb-5"
+      >
+         Zona BBQ 
+      </label>
+      <input
+        autocomplete="off"
+        class="step__input-adicional"
+        data-testid="input1"
+        name="input1"
+        type="checkbox"
+        value="Zona BBQ"
+      />
+    </div>
+    <br />
+    <div
+      class="step__label"
+    >
+      <label
+        class="mb-5"
+      >
+         Salon Comunal 
+      </label>
+      <input
+        autocomplete="off"
+        class="step__input-adicional"
+        data-testid="input2"
+        name="input2"
+        type="checkbox"
+        value="Salon Comunal"
+      />
+    </div>
+    <div
+      class="step__label"
+    >
+      <label
+        class="mb-5"
+      >
+         Parque de juegos 
+      </label>
+      <input
+        autocomplete="off"
+        class="step__input-adicional"
+        data-testid="input3"
+        name="input3"
+        type="checkbox"
+        value="Parque de juegos"
+      />
+    </div>
+    <br />
+    <button
+      class="btn btn-primary step__bold"
+      type="submit"
+    >
+      Siguiente
+    </button>
+  </form>
+</div>
+`;
