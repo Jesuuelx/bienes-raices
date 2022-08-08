@@ -40,8 +40,7 @@ export const Progress = () => {
       {/*   <!-- active --> progress__active */}
       <div
         className={`progress__step ${
-          pathname === "/correo-usuario" ? "progress__active" : ""
-        } ${email !== null && "progress__completed"}`}
+          pathname === "/correo-usuario" && "progress__active" } ${email !== null && "progress__completed"}`}
       >
         <div className="progress__v-stepper">
           <div className="progress__circle"></div>
@@ -64,7 +63,7 @@ export const Progress = () => {
       {/*  <!-- regular --> */}
       <div
         className={`progress__step ${
-          pathname === "/direccion" ? "progress__active" : ""
+          pathname === "/direccion" && "progress__active"
         } ${address !== null && "progress__completed"}`}
       >
         <div className="progress__v-stepper">
@@ -86,7 +85,7 @@ export const Progress = () => {
       {/*  <!-- regular --> */}
       <div
         className={`progress__step ${
-          pathname === "/datos-piso" ? "progress__active" : ""
+          pathname === "/datos-piso" && "progress__active"
         } ${floor !== null && "progress__completed"}`}
       >
         <div className="progress__v-stepper">
@@ -108,8 +107,7 @@ export const Progress = () => {
       {/*  <!-- regular --> */}
       <div
         className={`progress__step ${
-          pathname === "/caracteristicas" ? "progress__active" : ""
-        } ${pathname === "/resumen" && "progress__completed"}`}
+          pathname === "/caracteristicas" && "progress__active"} ${pathname === "/resumen" && "progress__completed"}`}
       >
         <div className="progress__v-stepper">
           <div className="progress__circle"></div>

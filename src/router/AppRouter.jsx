@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import { Route, Routes, Navigate } from "react-router-dom";
+import { Modal } from "../components/Modal";
 import { Progress } from "../components/Progress";
+import { useModal } from "../hooks/useModal";
 import {
   NameStep,
   EmailStep,
@@ -11,8 +13,11 @@ import {
 } from "../steps/pages";
 
 export const AppRouter = () => {
-  const { displayName, email, address, floor, aditionalInformation } =
-    useSelector((state) => state.steps);
+  const { displayName, email, address, floor } = useSelector(
+    (state) => state.steps
+  );
+
+  const [isOpen, openModal, closeModal] = useModal(false);
 
   return (
     <div className="step__main">
@@ -53,6 +58,12 @@ export const AppRouter = () => {
 
           <Route path="/*" element={<Navigate to="/nombre-usuario" />} />
         </Routes>
+        <div>
+          <button onClick={openModal} className={"btn-modal"}>
+            Ver tu Resumen
+          </button>
+          <Modal isOpen={isOpen} closeModal={closeModal} />
+        </div>
       </div>
       <div className="step__box-step mt-5">
         <Progress />

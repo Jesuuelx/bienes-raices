@@ -23,7 +23,7 @@ export const AdditionalStep = () => {
       <hr />
 
       <form onSubmit={onSubmit} className="step__form-direccion">
-        <div>
+        <div className="step__label">
           <label className="mb-5"> Zona BBQ </label>
           <input
             type="checkbox"
@@ -35,18 +35,18 @@ export const AdditionalStep = () => {
           />
         </div>
         <br />
-        <div>
+        <div className="step__label">
           <label className="mb-5"> Salon Comunal </label>
           <input
             type="checkbox"
             value="Salon Comunal"
             name="input"
-            className="step__input-adicional"
+            className="step__input-adicional" 
             autoComplete="off"
             onChange={() => dispatch(stepAditionalInformation(2))}
           />
         </div>
-        <div>
+        <div className="step__label">
           <label className="mb-5"> Parque de juegos </label>
           <input
             type="checkbox"
